@@ -1,0 +1,90 @@
+// Caroline Hsu - 10/14/2020
+/* This program prompts the user for 3 integer test scores and displays
+the average of those scores and the letter grade the average is. */
+// import scanner from API 
+import java.util.Scanner;
+public class LetterGrade
+{
+	public static void main(String[] args)
+	{
+		// declare a variable of type Scanner and declare other variables
+		Scanner input = new Scanner(System.in);
+		final double gradeAPlusMinimum = 97.5;
+		final int gradeAPlusMaximum = 100;
+		final double gradeAMinimum = 93.5;
+		final double gradeAMaximum = 97.49;
+		final double gradeAMinusMinimum = 89.5;
+		final double gradeAMinusMaximum = 93.49;
+		final double gradeBPlusMinimum = 86.5;
+		final double gradeBPlusMaximum = 89.49;
+		final double gradeBMinimum = 82.5;
+		final double gradeBMaximum = 86.49;
+		final double gradeBMinusMinimum = 79.5;
+		final double gradeBMinusMaximum = 82.49;
+		final double gradeCMinimum = 69.5;
+		final double gradeCMaxmimum = 79.49;
+		final double gradeFMaximum = 69.49;
+		final int dividingAverage = 3;
+		int firstGrade;
+		int secondGrade;
+		int thirdGrade;
+		double average;
+		
+		// Prompt the user to enter the 3 test grades and read the 3 inputs
+		System.out.print("Enter your first test grade: ");
+		firstGrade = input.nextInt();
+		input.nextLine();
+		System.out.print("Enter your second test grade: ");
+		secondGrade = input.nextInt();
+		input.nextLine();
+		System.out.print("Enter your third test grade: ");
+		thirdGrade = input.nextInt();
+		input.nextLine();
+		
+		// calculate the average of the grades entered and echo it back
+		// to the user
+		average = firstGrade + secondGrade + thirdGrade;
+		average = average / dividingAverage;
+		System.out.printf("The average of your " +
+											"scores is:%6.2f \n" , average);
+		
+		// if the average is an A+
+		if ( (average > gradeAPlusMinimum) && (average < gradeAPlusMaximum) )
+		{
+			System.out.println("Your letter grade is A+");
+		}
+		else if ( (average > gradeAMinimum) && (average < gradeAMaximum) )
+		// if the average is an A
+		{
+			System.out.println("Your letter grade is A");
+		}
+		// if the average is an A-
+		if ( (average > gradeAMinusMinimum) && (average < gradeAMinusMaximum) )
+		{
+			System.out.println("Your letter grade is A-");
+		}
+		// if the average is a B+
+		else if ( (average > gradeBPlusMinimum) && (average < gradeBPlusMaximum) )
+		{
+			System.out.println("Your letter grade is B+");
+		}
+		// if the average is a B
+		if ( (average > gradeBMinimum) && (average < gradeBMaximum) )
+		{
+			System.out.println("Your letter grade is B");
+		}
+		// if the average is a B-
+		else if ( ( average > gradeBMinusMinimum) && (average < gradeBMinusMaximum) )
+		{
+			System.out.println("Your letter grade is B-");
+		}
+		if ( (average > gradeCMinimum) && (average < gradeCMaxmimum) )
+		{
+			System.out.println("Your letter grade is C");
+		}
+		else if (average < gradeFMaximum)
+		{
+			System.out.println("Your letter grade is F");
+		}
+	}
+}
